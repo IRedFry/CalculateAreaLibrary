@@ -1,6 +1,7 @@
 ﻿
 namespace CalculateAreaLibrary
 {
+    // Класс треугольника
     public class Triangle : IFigure
     {
         private double _a;
@@ -10,6 +11,7 @@ namespace CalculateAreaLibrary
 
         public Triangle(double a, double b, double c)
         {
+            // Проверка на существование треугольника
             if (a > b + c || b > a + c || c > a + b)
                 throw new Exception("One of sides is bigger then sum of others");
 
@@ -21,7 +23,7 @@ namespace CalculateAreaLibrary
             CheckIsRight();
             CalculateArea();
         }
-
+        // Расчет площади в зависимости от типа треугольника
         protected override void CalculateArea()
         {
             if (IsRight)
@@ -29,18 +31,18 @@ namespace CalculateAreaLibrary
             else
                 CalculareAreaOfNotRightTriangle();
         }
-
+        // Расчет площади прямоугольного треугольника
         private void CalculateAreaOfRightTriangle()
         {
             _area = _b * _c / 2;
         }
-
+        // Расчет площади треугольника через три стороны
         private void CalculareAreaOfNotRightTriangle()
         {
             double p = (_a + _b + _c) / 2;
             _area = Math.Sqrt(p * (p - _a) * (p - _b) * (p - _c));
         }
-
+        // Проверка на прямоугольный треугольник
         private void CheckIsRight()
         {
             if (Math.Pow(_a, 2) == Math.Pow(_b, 2) + Math.Pow(_c, 2))
@@ -48,7 +50,8 @@ namespace CalculateAreaLibrary
             else
                 IsRight = false;
         }
-
+        // Сортировка сторон по убыванию
+        // Чтобы при проверке на прямоугольный треугольник гипотенуза всегда была в переменной _a
         private void SortSides()
         {
             if (_b > _a)
