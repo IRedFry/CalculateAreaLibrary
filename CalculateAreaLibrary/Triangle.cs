@@ -2,7 +2,7 @@
 namespace CalculateAreaLibrary
 {
     // Класс треугольника
-    public class Triangle : IFigure
+    public class Triangle : Figure
     {
         private double _a;
         private double _b;

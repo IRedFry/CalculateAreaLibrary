@@ -2,7 +2,7 @@
 namespace CalculateAreaLibrary
 {
     // Абстрактный класс, от которого будут наследоваться все фигуры
-    public abstract class IFigure
+    public abstract class Figure
     {
         // Поле, содержащее значение площади
         protected double _area;

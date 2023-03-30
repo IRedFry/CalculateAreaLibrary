@@ -3,7 +3,7 @@
 namespace CalculateAreaLibrary
 {
     // Класс круга
-    public class Circle : IFigure
+    public class Circle : Figure
     {
         private double _radius;
         public Circle(double radius)
